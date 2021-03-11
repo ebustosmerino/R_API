@@ -20,3 +20,30 @@ Para el desarrollo de la API REST (envio y recepción de datos a traves de llama
 > options(repos="https://cran.rstudio.com")
 > install.packages("plumber")
 > ```
+
+## Control de versiones
+
+### 0.0.1
+
+El archivo `plumber.R` contiene el diseño de la API usando comentarios `#*`. Define tres endpoints, `/echo` llamada por GET, `/plot` llamada GET, `/sum` llamada POST.
+
+El archivo `main.R` contiene la configuración para la ejecución del archivo `plumber.R`.
+Al ejecutar el archivo `main.R` se expone el puerto 8000.
+
+```
+curl "http://127.0.0.1:8000/echo?msg=hello"
+```
+
+Visitar la URL
+
+```
+url "http://127.0.0.1:8000/plot"
+```
+
+```
+curl --data "a=4&b=3" "http://localhost:8000/sum"
+```
+
+```
+curl -H "Content-Type: application/json" --data '{"a":4, "b":5}' http://localhost:8000/sum
+```
