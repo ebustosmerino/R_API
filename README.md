@@ -21,9 +21,7 @@ Para el desarrollo de la API REST (envio y recepción de datos a traves de llama
 > install.packages("plumber")
 > ```
 
-## Dockerizando
-
-Archivo Dockerfile
+## Dockerizando
 
 -   Crear imagen
 
