@@ -1,7 +1,13 @@
-FROM r-base:latest
+FROM rocker/verse:latest
 
-RUN R -e "install.packages('plumber', repo='http://cran.rstudio.com/')"
+RUN apt-get update -qq && apt-get install -y \
+    libssl-dev \
+    libcurl4-gnutls-dev
 
-COPY . .
+RUN R -e "install.packages('plumber')"
+
+EXPOSE 8000
+
+COPY / /
 
 ENTRYPOINT ["Rscript", "main.R"]

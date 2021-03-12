@@ -21,7 +21,33 @@ Para el desarrollo de la API REST (envio y recepción de datos a traves de llama
 > install.packages("plumber")
 > ```
 
+## Dockerizando
+
+Archivo Dockerfile
+
+-   Crear imagen
+
+```
+docker build . -t apir:0.0.2
+```
+
+-   Listar imagenes docker
+
+```
+docker images
+```
+
+-   Ejecutar imagen
+
+```
+docker run --rm -p 8000:8000 apir:0.0.2
+```
+
 ## Control de versiones
+
+### 0.0.2
+
+Ambiente dockerizado, se debe indicar el host en el archivo `main.R` para el correcto funcionamiento.
 
 ### 0.0.1
 
